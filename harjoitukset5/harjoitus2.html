@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="tyyli.css">
+</head>
+
+<body>
+
+<div id="toDo" class="header">
+<h1>Tehtävälista</h1>
+  <input type="text" id="lisays" placeholder="Lisaa tehtava...">
+  <span onclick="nappiTap()" class="nappi">Lisaa</span>
+
+</div>
+
+<ul id="taulukkoa">
+
+</ul>
+   <span onclick="nappiTap1()"  id='poistoon' class="nappi">Poista kaikki</span>
+
+<script>
+
+var toDoLista = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < toDoLista.length; i++) {
+}
+
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+function nappiTap() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("lisays").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+
+document.getElementById("taulukkoa").appendChild(li);
+document.getElementById("lisays").value = "";
+
+}
+
+poistoon.onclick = () => {
+            let lista = document.getElementById("taulukkoa");
+            while (taulukkoa.hasChildNodes()) {
+                lista.removeChild(lista.firstChild);
+            }
+        };
+
+document.addEventListener("click", function() {
+            if (event.target.tagName == "LI") {
+                document.getElementById("taulukkoa").removeChild(event.target);
+            }
+        });
+</script>
+
+</body>
+</html>
